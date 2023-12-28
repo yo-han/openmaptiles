@@ -374,7 +374,12 @@ FROM (
          LEFT OUTER JOIN osm_transportation_name_network n ON hl.osm_id = n.osm_id
          WHERE NOT is_area
            AND
-               CASE WHEN zoom_level = 12 THEN
+               CASE 
+                    WHEN zoom_level = 11 THEN
+                         CASE WHEN transportation_filter_z11(hl.highway, hl.construction) THEN TRUE
+                              WHEN hl.highway IN ('track', 'path') THEN n.route_rank = 1
+                         END
+                    WHEN zoom_level = 12 THEN
                          CASE WHEN transportation_filter_z12(hl.highway, hl.construction) THEN TRUE
                               WHEN hl.highway IN ('track', 'path') THEN n.route_rank = 1
                          END

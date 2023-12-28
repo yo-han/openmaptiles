@@ -57,6 +57,21 @@ $$ LANGUAGE SQL IMMUTABLE
                 STRICT
                 PARALLEL SAFE;
 
+-- Determine which transportation features are shown at zoom 11
+CREATE OR REPLACE FUNCTION transportation_filter_z11(highway text, construction text) RETURNS boolean AS
+$$
+SELECT CASE
+           WHEN highway IN ('unclassified', 'residential') THEN TRUE
+           WHEN highway_class(highway, '', construction) IN
+               (
+                'motorway', 'trunk', 'primary', 'secondary', 'tertiary'
+               ) THEN TRUE --includes ramps
+           ELSE FALSE
+       END
+$$ LANGUAGE SQL IMMUTABLE
+                STRICT
+                PARALLEL SAFE;
+
 -- Determine which transportation features are shown at zoom 12
 CREATE OR REPLACE FUNCTION transportation_filter_z12(highway text, construction text) RETURNS boolean AS
 $$
