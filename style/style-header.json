@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "name": "OSM OpenMapTiles",
-  "id": "openmaptiles",
+  "name": "Climbfinder",
+  "id": "climbfinder",
   "center": [
     0,
     0
@@ -9,7 +9,7 @@
   "zoom": 1,
   "bearing": 0,
   "pitch": 0,
-  "sources": {
+ "sources": {
     "openmaptiles": {
       "type": "vector",
       "url": "mbtiles:///data/tiles.mbtiles"
@@ -17,6 +17,14 @@
     "attribution": {
       "attribution": "<a href=\"https://www.openmaptiles.org/\" target=\"_blank\">&copy; OpenMapTiles</a> <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\">&copy; OpenStreetMap contributors</a>",
       "type": "vector"
+    },
+    "hillshade": {
+      "type": "raster",
+      "url": "https://maps.climbfinder.com/data/hillshade.json"
+    },
+    "contour": {
+      "type": "vector",
+      "url": "https://maps.climbfinder.com/data/contours.json"
     }
   },
   "glyphs": "{fontstack}/{range}.pbf",

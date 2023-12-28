@@ -7,7 +7,7 @@
     }
   },
   "styles": {
-    "OSM OpenMapTiles": {
+    "climbfinder": {
       "style": "style.json",
       "tilejson": {
         "type": "overlay"
@@ -15,7 +15,7 @@
     }
   },
   "data": {
-    "openmaptiles": {
+    "climbfinder": {
       "mbtiles": "/data/tiles.mbtiles"
     }
   }
