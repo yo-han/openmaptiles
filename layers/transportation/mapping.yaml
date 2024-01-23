@@ -201,6 +201,10 @@ surface_field: &surface
   key: surface
   name: surface
   type: string
+surface_type_field: &surface_type
+  key: surface_type
+  name: surface_type
+  type: string
 expressway_field: &expressway
   key: expressway
   name: expressway
@@ -255,6 +259,7 @@ tables:
     - *mtb_scale
     - *sac_scale
     - *surface
+    - *surface_type
     - *expressway
     mapping:
       highway:
