@@ -82,7 +82,7 @@ SELECT CASE
                 'motorway', 'trunk', 'primary', 'secondary', 'tertiary', 'raceway',
                 'motorway_construction', 'trunk_construction', 'primary_construction',
                 'secondary_construction', 'tertiary_construction', 'raceway_construction',
-                'busway', 'bus_guideway'
+                'busway', 'bus_guideway', 'cycleway'
                ) THEN TRUE --includes ramps
            ELSE FALSE
        END
