@@ -378,7 +378,7 @@ FROM (
                 foot,
                 horse,
                 mtb_scale,
-                NULLIF(surface, '') as surface_type,
+                surface as surface_type,
                 surface_value(COALESCE(NULLIF(surface, ''), tracktype)) AS "surface",
                 hl.z_order
          FROM osm_highway_linestring hl
